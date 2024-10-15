@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "pushpush"
+version = "0.1.0"
+description = "sokoban"
+authors = ["kuviman <kuviman@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pygame = "^2.6.1"
+PyOpenGL = "=3.1.1.a1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
