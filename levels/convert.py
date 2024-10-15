@@ -56,7 +56,7 @@ for levelset in [os.path.splitext(s)[0] for s in
                     lvl[-1].append(" #$.@*+".index(c))
                 w = max(w, cnt)
             for row in lvl:
-                for i in xrange(w-len(row)):
+                for i in range(w-len(row)):
                     row.append(EMPTY)
             pickle.dump(lvl, open("%s/%s.ppl"%(levelset, name), "wb"))
         except:

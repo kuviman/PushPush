@@ -18,5 +18,5 @@
 ##
 ##    you can contact me kuviman@gmail.com
 
-from menu import Menu
-from menuitem import MenuItem
+from .menu import Menu
+from .menuitem import MenuItem

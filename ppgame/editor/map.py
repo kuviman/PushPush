@@ -51,7 +51,7 @@ class Map(ke.Object):
         self.size = len(self.map)
 
     def save(self, path):
-        print "saving", path
+        print("saving", path)
         pickle.dump(self.map, open(path, "wb"))
 
     def onRender(self, draw):
@@ -59,8 +59,8 @@ class Map(ke.Object):
         draw.rect((-1, -1), (self.size, self.size))
         draw.color(1, 1, 1)
         draw.rect((-0.5, -0.5), (self.size-0.5, self.size-0.5))
-        for i in xrange(self.size):
-            for j in xrange(self.size):
+        for i in range(self.size):
+            for j in range(self.size):
                 val = self.map[i][j]
                 draw.color(1, 1, 1)
                 if val == EMPTY:
@@ -83,5 +83,6 @@ class Map(ke.Object):
                     raise ValueError
                 draw.image(im, (i, j))
 
-    def set_at(self, (i, j), val):
+    def set_at(self, p, val):
+        i, j = p
         self.map[i][j] = val

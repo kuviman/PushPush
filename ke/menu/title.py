@@ -18,7 +18,7 @@
 ##
 ##    you can contact me kuviman@gmail.com
 
-from menuitem import *
+from .menuitem import *
 
 class MTitle(MenuItem):
     clickable = False

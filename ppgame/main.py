@@ -20,10 +20,10 @@
 
 import webbrowser
 import ke
-from settings import *
-from editor import *
-from game import *
-from constants import *
+from .settings import *
+from .editor import *
+from .game import *
+from .constants import *
 import sys, os, pickle
 
 ICONPATH = None #"data/icon.tga"
@@ -31,7 +31,7 @@ FONTPATH = "data/font.tga"
 MUSICPATH = "data/music.mp3"
 
 def run():
-    print "running", TITLE, "version", VERSION
+    print("running", TITLE, "version", VERSION)
     settings = Settings("settings.pp")
     app = ke.App(FULL_TITLE, settings['size'],
                  settings['fullscreen'], ICONPATH)

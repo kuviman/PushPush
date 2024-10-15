@@ -18,7 +18,7 @@
 ##
 ##    you can contact me kuviman@gmail.com
 
-from state import *
+from .state import *
 import pygame
 from pygame.locals import *
 

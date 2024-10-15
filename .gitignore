@@ -1,3 +1,5 @@
 error.txt
 settings.pp
 log.txt
+__pycache__/
+venv/

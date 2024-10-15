@@ -68,7 +68,8 @@ class DrawModule:
     def notex(self):
         glBindTexture(GL_TEXTURE_2D, 0)
 
-    def point(self, (x, y), size=1):
+    def point(self, p, size=1):
+        x, y = p
         self.notex()
         glPushMatrix()
         glTranslatef(x, y, 0)

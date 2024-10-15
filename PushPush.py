@@ -26,10 +26,10 @@ try:
     try:
         ppgame.run()
     except ke.shutdown:
-        print "app was closed"
+        print("app was closed")
 except:
-    print "ERROR see error.txt for details"
+    print("ERROR see error.txt for details")
     traceback.print_exc()
 else:
-    print "app finished successfully"
+    print("app finished successfully")
     sys.stderr.write("No errors")

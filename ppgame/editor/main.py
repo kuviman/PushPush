@@ -21,7 +21,7 @@
 import ke
 from ke.locals import *
 from ke.misc import *
-from map import *
+from .map import *
 import os
 
 HOWTO = '''PushPush editor howto
@@ -62,7 +62,7 @@ class Editor(ke.State):
 
     def load(self):
         lst = os.listdir("levels/user levels")
-        print lst
+        print(lst)
         x = self.app.choose([s.split('.')[0] for s in lst], "Load Level")
         if x >= 0:
             self.new_map("levels/user levels/%s"%lst[x])

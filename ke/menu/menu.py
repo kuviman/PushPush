@@ -21,13 +21,13 @@
 from ..state import *
 from ..objects import *
 from ..sound import *
-from menuitem import *
-from button import *
-from title import *
-from label import *
-from check import *
-from choice import *
-from scale import *
+from .menuitem import *
+from .button import *
+from .title import *
+from .label import *
+from .check import *
+from .choice import *
+from .scale import *
 
 class Menu(State):
     border = 50
@@ -128,7 +128,7 @@ class Menu(State):
                 i += d
             focus = self.items.objects[i%len(self.items.objects)]
         else:
-            for item in (self.items if d > 0 else reversed(self.items.objects)):
+            for item in (self.items if d > 0 else reversed(list(self.items.objects))):
                 if item.clickable:
                     focus = item
                     break

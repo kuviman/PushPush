@@ -35,11 +35,11 @@ class Settings:
         if os.path.isfile(path):
             self.reload()
         else:
-            print "using standart settings"
+            print("using standart settings")
             self.save()
 
     def reload(self):
-        print "settings loaded from", self.path
+        print("settings loaded from", self.path)
         self.dict = pickle.load(open(self.path, "rb"))
     def save(self):
         pickle.dump(self.dict, open(self.path, "wb"))

@@ -86,7 +86,7 @@ setup(windows=[script],
           'excludes': ['OpenGL']}},
       )#    data_files=data)
 
-print 'adding OpenGL to library.zip...'
+print('adding OpenGL to library.zip...')
 ZipFile('dist/library.zip', 'r').extractall("lib")
 shutil.copytree('C:/python26/lib/site-packages/OpenGL', 'lib/OpenGL')
 f = ZipFile('dist/library.zip', 'w')
@@ -101,7 +101,7 @@ shutil.rmtree('build')
 for d in data:
     shutil.copytree(d, 'dist/'+d)
 os.rename('dist', exe_path)
-print 'making win32 zip'
+print('making win32 zip')
 f = ZipFile(exe_path+'.zip', 'w')
 for root, dirs, files in os.walk(exe_path):
     for name in files:

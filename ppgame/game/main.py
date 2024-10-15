@@ -54,23 +54,23 @@ class Game(ke.State):
         self.boxes = []
         mp = pickle.load(open(path, "rb"))
         fi = fj = max(len(mp), len(mp[0]))
-        for i in xrange(len(mp)):
-            for j in xrange(len(mp[0])):
+        for i in range(len(mp)):
+            for j in range(len(mp[0])):
                 if mp[i][j] != EMPTY:
                     fi = min(fi, i)
                     li = i
-        for j in xrange(len(mp[0])):
-            for i in xrange(len(mp)):
+        for j in range(len(mp[0])):
+            for i in range(len(mp)):
                 if mp[i][j] != EMPTY:
                     fj = min(fj, j)
                     lj = j
         self.map = []
-        for i in xrange(li-fi+1):
+        for i in range(li-fi+1):
             self.map.append([])
-            for j in xrange(lj-fj+1):
+            for j in range(lj-fj+1):
                 self.map[-1].append(mp[fi+i][fj+j])
-        for i in xrange(li-fi+1):
-            for j in xrange(lj-fj+1):
+        for i in range(li-fi+1):
+            for j in range(lj-fj+1):
                 if self.map[i][j] == BOX:
                     self.boxes.append((i, j))
                 elif self.map[i][j] == PLAYER:

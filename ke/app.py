@@ -21,12 +21,12 @@
 import pygame
 from pygame.locals import *
 from OpenGL.GL import *
-from image import *
-from draw import *
-from font import *
-from menu import *
-from sound import *
-from input import *
+from .image import *
+from .draw import *
+from .font import *
+from .menu import *
+from .sound import *
+from .input import *
 
 DEFRESOLUTION = (640, 480)
 

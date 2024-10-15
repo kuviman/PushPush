@@ -18,4 +18,4 @@
 ##
 ##    you can contact me kuviman@gmail.com
 
-from main import Editor
+from .main import Editor

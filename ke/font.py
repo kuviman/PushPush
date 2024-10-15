@@ -48,13 +48,13 @@ class Font:
         self.ws = [0]*256
         size = w/16
         self.dbase = glGenLists(256)
-        for x in xrange(16):
-            for y in xrange(16):
+        for x in range(16):
+            for y in range(16):
                 c = y*16+x
                 sub = im.subsurface((x*size, y*size, size, size))
                 x1 = None
-                for i in xrange(size):
-                    for j in xrange(size):
+                for i in range(int(size)):
+                    for j in range(int(size)):
                         if sub.get_at((i, j)).a != 0:
                             x1 = x+float(i-1)/size
                             break
@@ -63,9 +63,9 @@ class Font:
                 if x1 is None:
                     x1 = x
                 x2 = None
-                for i in xrange(size):
-                    for j in xrange(size):
-                        if sub.get_at((size-i-1, j)).a != 0:
+                for i in range(int(size)):
+                    for j in range(int(size)):
+                        if sub.get_at((int(size)-i-1, j)).a != 0:
                             x2 = x+1-float(i-1)/size
                             break
                     if x2 is not None:

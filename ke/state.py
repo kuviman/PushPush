@@ -21,7 +21,7 @@
 import pygame
 from pygame.locals import *
 
-class shutdown: pass
+class shutdown(Exception): pass
 
 current = None
 
@@ -53,11 +53,11 @@ class State:
                         self.onMouseUp(e.button)
                     elif e.type == MOUSEMOTION:
                         self.onMouseMove()
-            except Exception, e:
+            except Exception as e:
                 x = self.app.show_message(
                     "Error:\n%s"%e,('ignore', 'close app'))
                 if x == 1:
-                    raise
+                    raise Exception("bad")
         if last:
             last.onResume()
 

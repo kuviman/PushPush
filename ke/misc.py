@@ -21,8 +21,8 @@
 from math import *
 
 def array2d(n, m, val):
-    return [[val for j in xrange(m)]
-            for i in xrange(n)]
+    return [[val for j in range(m)]
+            for i in range(n)]
 
 def hsv(h, s, v, a=1):
     c = v*s
@@ -69,7 +69,7 @@ def lazy(f):
     return func
 
 def todo(func):
-    print 'TODO:', func.__name__
+    print('TODO:', func.__name__)
     return func
 
 def interl(a, b, k):

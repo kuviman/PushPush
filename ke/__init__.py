@@ -18,12 +18,12 @@
 ##
 ##    you can contact me kuviman@gmail.com
 
-from app import App
-from image import Image
-from state import shutdown, State
-from menu import *
-from sound import Sound
-from objects import Object, Group
+from .app import App
+from .image import Image
+from .state import shutdown, State
+from .menu import *
+from .sound import Sound
+from .objects import Object, Group
 
 if __name__ == "__main__":
     class Test(State):
