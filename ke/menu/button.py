@@ -43,7 +43,7 @@ class MButton(MenuItem):
 
     def onRelease(self):
         self.pressed = False
-        apply(self.func)
+        self.func()
 
     def onFocus(self, gain):
         self.color = self.activecolor if gain else self.idlecolor

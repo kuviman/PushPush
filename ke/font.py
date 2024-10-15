@@ -46,7 +46,7 @@ class Font:
             0, GL_RGBA, GL_UNSIGNED_BYTE,
             pygame.image.tostring(im, "RGBA"))
         self.ws = [0]*256
-        size = w/16
+        size = w//16
         self.dbase = glGenLists(256)
         for x in range(16):
             for y in range(16):
@@ -63,9 +63,9 @@ class Font:
                 if x1 is None:
                     x1 = x
                 x2 = None
-                for i in range(int(size)):
-                    for j in range(int(size)):
-                        if sub.get_at((int(size)-i-1, j)).a != 0:
+                for i in range(size):
+                    for j in range(size):
+                        if sub.get_at((size-i-1, j)).a != 0:
                             x2 = x+1-float(i-1)/size
                             break
                     if x2 is not None:
@@ -96,7 +96,9 @@ class Font:
         glTranslatef(x-(ax+1)*w/2.0, y-ay*size, 0)
         glScalef(size, size, 1)
         glListBase(self.dbase)
-        glCallLists(text)
+        for c in text:
+            glCallList(self.dbase + ord(c))
+        # glCallLists(text)
         glPopMatrix()
 
     def width(self, text, size):

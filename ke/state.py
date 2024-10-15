@@ -36,7 +36,6 @@ class State:
             last.onPause()
         self.power = True
         while self.power:
-            try:
                 self.onUpdate(self.app.timer.tick()/1000.0)
                 self.onRender(self.app.draw)
                 pygame.display.flip()
@@ -53,11 +52,6 @@ class State:
                         self.onMouseUp(e.button)
                     elif e.type == MOUSEMOTION:
                         self.onMouseMove()
-            except Exception as e:
-                x = self.app.show_message(
-                    "Error:\n%s"%e,('ignore', 'close app'))
-                if x == 1:
-                    raise Exception("bad")
         if last:
             last.onResume()
 

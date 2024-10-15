@@ -71,6 +71,7 @@ class Menu(State):
         draw.clear()
         draw.flat(max(self.minsize, self.size))
         draw.translate(0, -self.size/2.0)
+        # print(self.items.objects)
         self.items.render(draw)
 
     def onMouseDown(self, button):

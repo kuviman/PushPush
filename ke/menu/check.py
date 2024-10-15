@@ -51,7 +51,7 @@ class MCheck(MenuItem):
     def onRelease(self):
         self.pressed = False
         self.val = not self.val
-        apply(self.func, (self.val,))
+        self.func(self.val,)
 
     def onFocus(self, gain):
         self.color = self.activecolor if gain else self.idlecolor

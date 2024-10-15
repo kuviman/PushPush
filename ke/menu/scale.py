@@ -60,7 +60,7 @@ class MScale(MenuItem):
     def drag(self, x):
         self.val = clamp(0.5*(x+self.width)/self.width, 0, 1)
         if self.dup:
-            apply(self.func, (self.val,))
+            self.func (self.val,)
 
     def onPress(self, x):
         self.pressed = True
@@ -72,7 +72,7 @@ class MScale(MenuItem):
 
     def onRelease(self):
         self.pressed = False
-        apply(self.func, (self.val,))
+        self.func (self.val,)
 
     def onFocus(self, gain):
         self.color = self.activecolor if gain else self.idlecolor

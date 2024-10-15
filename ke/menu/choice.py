@@ -51,7 +51,7 @@ class MChoice(MenuItem):
     def onRelease(self):
         self.pressed = False
         self.idx = (self.idx+1)%len(self.choice)
-        apply(self.func, (self.idx,))
+        self.func(self.idx,)
 
     def onFocus(self, gain):
         self.color = self.activecolor if gain else self.idlecolor

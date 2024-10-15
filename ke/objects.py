@@ -49,8 +49,8 @@ class Group:
     def update(self, dt):
         for obj in self.objects:
             obj.update(dt)
-        self.objects = filter(
-            lambda obj: obj.alive, self.objects)
+        self.objects = list(filter(
+            lambda obj: obj.alive, self.objects))
     def render(self, draw):
         for obj in self.objects:
             obj.render(draw)

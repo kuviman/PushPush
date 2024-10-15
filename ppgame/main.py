@@ -98,6 +98,8 @@ def run():
     gm.add_separator()
     gm.add_button("back", gm.close)
 
+    print("1");
+
     sm = ke.Menu(app)
     sm.add_title("Settings")
     sm.add_separator()
@@ -135,7 +137,7 @@ def run():
         x = app.choose([s.split('.')[0] for s in lst], "Choose levelset")
         if x == -1:
             return
-        if not settings['progress'].has_key(lst[x]):
+        if not lst[x] in settings['progress']:
             settings['progress'][lst[x]] = 0
         levels = pickle.load(open('levels/%s.ppo'%lst[x], 'rb'))
         while True:
@@ -182,4 +184,5 @@ def run():
                             ('yes', 'no')) == 0:
             mm.close()
     mm.add_button("exit", on_exit)
+    print(2)
     mm.run()
